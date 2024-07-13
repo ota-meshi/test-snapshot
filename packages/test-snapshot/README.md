@@ -16,13 +16,13 @@ A snapshot testing library similar to [jest-snapshot].
 ## 💿 Installation
 
 ```bash
-npm install -D test-snapshot
+npm install -D @ota-meshi/test-snapshot
 ```
 
 ## 📖 Usage
 
 ```js
-import { expect } from "test-snapshot";
+import { expect } from "@ota-meshi/test-snapshot";
 
 it("foo", () => {
   expect({ foo: "bar" }).toMatchSnapshot();
