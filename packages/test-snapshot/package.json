@@ -1,0 +1,55 @@
+{
+  "name": "test-snapshot",
+  "version": "0.0.0",
+  "description": "A snapshot testing library similar to jest-snapshot.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs",
+      "default": "./lib/index.js"
+    }
+  },
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "prebuild": "npm run -s clean",
+    "build": "npm run build:version && npm run bundle",
+    "build:version": "node --loader=ts-node/esm/transpile-only scripts/version.mts",
+    "bundle": "tsup",
+    "clean": "rimraf .nyc_output lib coverage",
+    "test": "mocha --loader=ts-node/esm \"tests/src/**/*.mts\" --reporter dot --timeout 60000",
+    "cover": "c8 --reporter=lcov npm run test",
+    "debug": "mocha --loader=ts-node/esm/transpile-only \"tests/src/**/*.mts\" --reporter dot --timeout 60000",
+    "update-snap": "mocha --loader=ts-node/esm/transpile-only \"tests/src/**/*.mts\" --reporter dot --update --timeout 60000",
+    "version-script": "npm run build:version"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ota-meshi/test-snapshot.git"
+  },
+  "keywords": [
+    "test-snapshot",
+    "mocha",
+    "snapshot"
+  ],
+  "author": "Yosuke Ota",
+  "funding": "https://github.com/sponsors/ota-meshi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ota-meshi/test-snapshot/issues"
+  },
+  "homepage": "https://github.com/ota-meshi/test-snapshot/tree/main/packages/core#readme",
+  "dependencies": {
+    "natural-compare": "^1.4.0",
+    "pretty-format": "^29.7.0"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "name": "test-snapshot-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A snapshot testing library similar to jest-snapshot.",
+  "type": "module",
+  "workspaces": [
+    "packages/test-snapshot",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "clean": "rimraf .nyc_output lib coverage",
+    "lint": "eslint .",
+    "eslint-fix": "npm run lint -- --fix && prettier **/README.md --write",
+    "pretest": "npm run build",
+    "test": "npm run test --workspaces --if-present",
+    "preupdate-snap": "npm run build",
+    "update-snap": "npm run update-snap --workspaces --if-present",
+    "cover": "npm run cover --workspaces --if-present",
+    "preversion": "npm run lint && npm test",
+    "version-script": "npm run version-script --workspaces --if-present && changeset version",
+    "prerelease": "npm run clean && npm run build",
+    "release": "changeset publish",
+    "postinstall": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ota-meshi/test-snapshot.git"
+  },
+  "author": "Yosuke Ota",
+  "funding": "https://github.com/sponsors/ota-meshi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ota-meshi/test-snapshot/issues"
+  },
+  "homepage": "https://github.com/ota-meshi/test-snapshot#readme",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@ota-meshi/eslint-plugin": "^0.17.0",
+    "@svitejs/changesets-changelog-github-compact": "^1.1.0",
+    "@types/estree": "^1.0.0",
+    "@types/mocha": "^10.0.0",
+    "@types/natural-compare": "^1.4.3",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "c8": "^10.0.0",
+    "eslint": "^9.4.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-jsdoc": "^48.2.4",
+    "eslint-plugin-json-schema-validator": "^5.0.0",
+    "eslint-plugin-jsonc": "^2.5.0",
+    "eslint-plugin-math": "^0.6.0",
+    "eslint-plugin-n": "^17.0.0",
+    "eslint-plugin-node-dependencies": "^0.12.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-regexp": "^2.0.0",
+    "mocha": "^10.1.0",
+    "prettier": "^3.0.0",
+    "rimraf": "^6.0.0",
+    "ts-node": "^10.4.0",
+    "tsup": "^8.0.0",
+    "typescript": "~5.5.0",
+    "typescript-eslint": "^7.11.0"
+  }
+}
