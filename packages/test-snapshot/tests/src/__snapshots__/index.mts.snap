@@ -1,4 +1,4 @@
-// test-snapshot v0
+// test-snapshot v1
 
 exports[`Tests -0.128 * -2.944 1`] = `"0.376832"`;
 
