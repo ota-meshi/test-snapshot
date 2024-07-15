@@ -9,6 +9,11 @@
       "import": "./lib/index.js",
       "require": "./lib/index.cjs",
       "default": "./lib/index.js"
+    },
+    "./chai": {
+      "import": "./lib/chai.js",
+      "require": "./lib/chai.cjs",
+      "default": "./lib/chai.js"
     }
   },
   "files": [
