@@ -33,7 +33,7 @@
     "cover": "c8 --reporter=lcov npm run test",
     "debug:mocha": "mocha --loader=ts-node/esm/transpile-only \"tests/mocha/**/*.mts\" --reporter dot --timeout 60000",
     "update-snap:mocha": "mocha --loader=ts-node/esm/transpile-only \"tests/mocha/**/*.mts\" --reporter dot --update --timeout 60000",
-    "check-diff": "test -z \"$(git status -s)\"",
+    "check-diff": "git diff --exit-code && test -z \"$(git status -s)\"",
     "version-script": "npm run build:version"
   },
   "publishConfig": {
