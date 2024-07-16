@@ -28,10 +28,12 @@
     "build:version": "node --loader=ts-node/esm/transpile-only scripts/version.mts",
     "bundle": "tsup",
     "clean": "rimraf .nyc_output lib coverage",
-    "test": "mocha --loader=ts-node/esm \"tests/src/**/*.mts\" --reporter dot --timeout 60000",
+    "test": "npm run test:mocha && npm run update-snap:mocha && npm run check-diff",
+    "test:mocha": "mocha --loader=ts-node/esm \"tests/mocha/**/*.mts\" --reporter dot --timeout 60000",
     "cover": "c8 --reporter=lcov npm run test",
-    "debug": "mocha --loader=ts-node/esm/transpile-only \"tests/src/**/*.mts\" --reporter dot --timeout 60000",
-    "update-snap": "mocha --loader=ts-node/esm/transpile-only \"tests/src/**/*.mts\" --reporter dot --update --timeout 60000",
+    "debug:mocha": "mocha --loader=ts-node/esm/transpile-only \"tests/mocha/**/*.mts\" --reporter dot --timeout 60000",
+    "update-snap:mocha": "mocha --loader=ts-node/esm/transpile-only \"tests/mocha/**/*.mts\" --reporter dot --update --timeout 60000",
+    "check-diff": "test -z \"$(git status -s)\"",
     "version-script": "npm run build:version"
   },
   "publishConfig": {
