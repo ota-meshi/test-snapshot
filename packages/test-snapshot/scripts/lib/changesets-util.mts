@@ -10,6 +10,7 @@ export async function getNewVersion(): Promise<string> {
     path.resolve(__dirname, "../../../.."),
   );
 
-  return releasePlan.releases.find(({ name }) => name === "test-snapshot")!
-    .newVersion;
+  return releasePlan.releases.find(
+    ({ name }) => name === "@ota-meshi/test-snapshot",
+  )!.newVersion;
 }
