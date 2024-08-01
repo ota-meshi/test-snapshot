@@ -50,8 +50,8 @@
     "@types/estree": "^1.0.0",
     "@types/mocha": "^10.0.0",
     "@types/natural-compare": "^1.4.3",
-    "@typescript-eslint/eslint-plugin": "^7.3.1",
-    "@typescript-eslint/parser": "^7.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
     "c8": "^10.0.0",
     "chai": "^5.1.1",
     "eslint": "^9.4.0",
@@ -71,6 +71,6 @@
     "ts-node": "^10.4.0",
     "tsup": "^8.0.0",
     "typescript": "~5.5.0",
-    "typescript-eslint": "^7.11.0"
+    "typescript-eslint": "^8.0.0"
   }
 }
