@@ -46,7 +46,7 @@
     "@changesets/get-release-plan": "^4.0.3",
     "@ota-meshi/eslint-plugin": "^0.17.0",
     "@svitejs/changesets-changelog-github-compact": "^1.1.0",
-    "@types/chai": "^4.3.16",
+    "@types/chai": "^5.0.0",
     "@types/estree": "^1.0.0",
     "@types/mocha": "^10.0.0",
     "@types/natural-compare": "^1.4.3",
