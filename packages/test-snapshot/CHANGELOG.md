@@ -1,5 +1,11 @@
 # test-snapshot
 
+## 1.1.0
+
+### Minor Changes
+
+- feat: add support for chai ([#5](https://github.com/ota-meshi/test-snapshot/pull/5))
+
 ## 1.0.1
 
 ### Patch Changes
