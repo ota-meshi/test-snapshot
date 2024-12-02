@@ -1,6 +1,6 @@
 {
   "name": "@ota-meshi/test-snapshot",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A snapshot testing library similar to jest-snapshot.",
   "type": "module",
   "main": "lib/index.js",
