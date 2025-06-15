@@ -7,6 +7,6 @@ export default defineConfig([
     entryPoints: ["src/index.mts", "src/chai.mts"],
     format: ["esm", "cjs"],
     outDir: "lib",
-    target: "node18",
+    target: "node14",
   },
 ]);
