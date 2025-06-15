@@ -1,5 +1,11 @@
 # test-snapshot
 
+## 1.1.1
+
+### Patch Changes
+
+- fix: change build target to node14 ([`762100abe4d57a922283256ca45a9ed6790afe9d`](https://github.com/ota-meshi/test-snapshot/commit/762100abe4d57a922283256ca45a9ed6790afe9d))
+
 ## 1.1.0
 
 ### Minor Changes
