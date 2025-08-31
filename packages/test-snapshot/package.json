@@ -56,6 +56,6 @@
   "homepage": "https://github.com/ota-meshi/test-snapshot/tree/main/packages/core#readme",
   "dependencies": {
     "natural-compare": "^1.4.0",
-    "pretty-format": "^29.7.0"
+    "pretty-format": "^30.0.0"
   }
 }
